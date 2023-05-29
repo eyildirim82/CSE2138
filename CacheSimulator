@@ -1,0 +1,40 @@
+public class CacheSimulator {
+    public static void main(String[] args) {
+        int L1s = 0, L1E = 0, L1b = 0, L2s = 0, L2E = 0, L2b = 0;
+        String traceFile = "";
+
+        for (int i = 0; i < args.length; i++) {
+            switch (args[i]) {
+                case "-L1s":
+                    L1s = Integer.parseInt(args[++i]);
+                    break;
+                case "-L1E":
+                    L1E = Integer.parseInt(args[++i]);
+                    break;
+                case "-L1b":
+                    L1b = Integer.parseInt(args[++i]);
+                    break;
+                case "-L2s":
+                    L2s = Integer.parseInt(args[++i]);
+                    break;
+                case "-L2E":
+                    L2E = Integer.parseInt(args[++i]);
+                    break;
+                case "-L2b":
+                    L2b = Integer.parseInt(args[++i]);
+                    break;
+                case "-t":
+                    traceFile = args[++i];
+                    break;
+                default:
+                    System.out.println("Invalid argument: " + args[i]);
+                    System.exit(1);
+            }
+        }
+
+        // Now you have the parameters, you can print them to check
+        System.out.println("L1s: " + L1s + ", L1E: " + L1E + ", L1b: " + L1b);
+        System.out.println("L2s: " + L2s + ", L2E: " + L2E + ", L2b: " + L2b);
+        System.out.println("Trace file: " + traceFile);
+    }
+}
